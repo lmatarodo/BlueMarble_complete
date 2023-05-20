@@ -44,6 +44,63 @@ public class Events extends Object{
         }
 	}
 	
+	public void printPlayerLand(int x, int y, int playNum, int tileNum) {
+		ImageIcon imageIcon = new ImageIcon("player" + (playNum + 1) + "Land.png");
+		Image image = imageIcon.getImage();
+		int width = image.getWidth(null);
+		int height = image.getHeight(null);
+		Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
+		imageIcon = new ImageIcon(resizedImage);
+		JLabel imageLabel = new JLabel(imageIcon);
+		imageLabel.setBounds(x, y, 30, 50);
+		boardPanel.setLayout(null);
+		boardPanel.add(imageLabel);
+		boardPanel.repaint();
+		imageLabels[tileNum] = imageLabel;
+	}
+	
+	public void printBuildings(int x, int y, int howmany) {
+		if (howmany == 1) {
+			ImageIcon imageIcon = new ImageIcon("house.png");
+			Image image = imageIcon.getImage();
+			int width = image.getWidth(null);
+			int height = image.getHeight(null);
+			Image resizedImage = image.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+			imageIcon = new ImageIcon(resizedImage);
+			JLabel imageLabel = new JLabel(imageIcon);
+			imageLabel.setBounds(x, y, 30, 30);
+			boardPanel.setLayout(null);
+			boardPanel.add(imageLabel);
+			boardPanel.repaint();
+		}
+		else if (howmany == 2) {
+			ImageIcon imageIcon = new ImageIcon("building.png");
+			Image image = imageIcon.getImage();
+			int width = image.getWidth(null);
+			int height = image.getHeight(null);
+			Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
+			imageIcon = new ImageIcon(resizedImage);
+			JLabel imageLabel = new JLabel(imageIcon);
+			imageLabel.setBounds(x, y, 30, 50);
+			boardPanel.setLayout(null);
+			boardPanel.add(imageLabel);
+			boardPanel.repaint();
+		}
+		else if (howmany == 3) {
+			ImageIcon imageIcon = new ImageIcon("hotel.png");
+			Image image = imageIcon.getImage();
+			int width = image.getWidth(null);
+			int height = image.getHeight(null);
+			Image resizedImage = image.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
+			imageIcon = new ImageIcon(resizedImage);
+			JLabel imageLabel = new JLabel(imageIcon);
+			imageLabel.setBounds(x, y, 30, 70);
+			boardPanel.setLayout(null);
+			boardPanel.add(imageLabel);
+			boardPanel.repaint();
+		}
+		
+	}
 	
 	public void happens(Player me, Player you) {
 		// 타일 번호에 따라 이벤트 발생
@@ -170,242 +227,70 @@ public class Events extends Object{
 						switch(tilenum) {
 						case 1:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
 							}	
 							break;
 						case 2:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+
 							}
 							break;
 						case 4:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+
 							}
 							break;
 						case 5:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
 							}
 							break;
 						case 7:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[6] = imageLabel;
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[6] = imageLabel;
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
 							}
 							break;
 						case 8:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
 							}
 							break;
 						case 10:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
 							}
 							break;
 						case 11:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
 							}
 							break;
 						}					   
@@ -425,418 +310,82 @@ public class Events extends Object{
 						switch(tilenum) {
 						case 1:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
+								printBuildings(625, 875, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
+								printBuildings(625, 875, howmany);
 							}	
 							break;
 						case 2:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+								printBuildings(375, 875, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+								printBuildings(375, 875, howmany);
 							}
 							break;
 						case 4:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+								printBuildings(125, 625, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+								printBuildings(125, 625, howmany);
 							}
 							break;
 						case 5:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
+								printBuildings(125, 375, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
+								printBuildings(125, 375, howmany);
 							}
 							break;
 						case 7:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[7] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
+								printBuildings(375, 125, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[7] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
+								printBuildings(375, 125, howmany);
 							}
 							break;
 						case 8:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
+								printBuildings(625, 125, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
+								printBuildings(625, 125, howmany);
 							}
 							break;
 						case 10:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
+								printBuildings(875, 375, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
+								printBuildings(875, 375, howmany);
 							}
 							break;
 						case 11:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
+								printBuildings(875, 625, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("house.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
+								printBuildings(875, 625, howmany);
 							}
 							break;
 						}					   
@@ -856,421 +405,85 @@ public class Events extends Object{
 						switch(tilenum) {
 						case 1:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
+								printBuildings(625, 875, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
+								printBuildings(625, 875, howmany);
 							}	
 							break;
 						case 2:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+								printBuildings(375, 875, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+								printBuildings(375, 875, howmany);
 							}
 							break;
 						case 4:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+								printBuildings(125, 625, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+								printBuildings(125, 625, howmany);
 							}
 							break;
 						case 5:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
+								printBuildings(125, 375, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
+								printBuildings(125, 375, howmany);
 							}
 							break;
 						case 7:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[7] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
+								printBuildings(375, 125, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[7] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
+								printBuildings(375, 125, howmany);
 							}
 							break;
 						case 8:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
+								printBuildings(625, 125, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
+								printBuildings(625, 125, howmany);
 							}
 							break;
 						case 10:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
+								printBuildings(875, 375, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
+								printBuildings(875, 375, howmany);
 							}
 							break;
 						case 11:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
+								printBuildings(875, 625, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("building.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
+								printBuildings(875, 625, howmany);
 							}
 							break;
-						}					   
+						}				   
 					}
 					break;
 				case 3:
@@ -1287,418 +500,82 @@ public class Events extends Object{
 						switch(tilenum) {
 						case 1:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
+								printBuildings(625, 875, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[1] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 875, p.Playernum, tilenum); 
+								printBuildings(625, 875, howmany);
 							}	
 							break;
 						case 2:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+								printBuildings(375, 875, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[2] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 875, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 875, p.Playernum, tilenum); 
+								printBuildings(375, 875, howmany);
 							}
 							break;
 						case 4:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+								printBuildings(125, 625, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[4] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 625, p.Playernum, tilenum); 
+								printBuildings(125, 625, howmany);
 							}
 							break;
 						case 5:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
+								printBuildings(125, 375, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(75, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[5] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(125, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(75, 375, p.Playernum, tilenum); 
+								printBuildings(125, 375, howmany);
 							}
 							break;
 						case 7:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[7] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
+								printBuildings(375, 125, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(325, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[7] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(375, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(325, 125, p.Playernum, tilenum); 
+								printBuildings(375, 125, howmany);
 							}
 							break;
 						case 8:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
+								printBuildings(625, 125, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(575, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[8] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(625, 125, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(575, 125, p.Playernum, tilenum); 
+								printBuildings(625, 125, howmany);
 							}
 							break;
 						case 10:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
+								printBuildings(875, 375, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[10] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 375, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 375, p.Playernum, tilenum); 
+								printBuildings(875, 375, howmany);
 							}
 							break;
 						case 11:
 							if (p.Playernum == 0) {
-								ImageIcon imageIcon = new ImageIcon("player1Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
+								printBuildings(875, 625, howmany);
 							}
 							else {
-								ImageIcon imageIcon = new ImageIcon("player2Land.png");
-								Image image = imageIcon.getImage();
-								int width = image.getWidth(null);
-								int height = image.getHeight(null);
-								Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-								imageIcon = new ImageIcon(resizedImage);
-								JLabel imageLabel = new JLabel(imageIcon);
-								imageLabel.setBounds(825, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel);
-								boardPanel.repaint();
-								imageLabels[11] = imageLabel;
-								ImageIcon imageIcon2 = new ImageIcon("hotel.png");
-								Image image2 = imageIcon2.getImage();
-								int width2 = image2.getWidth(null);
-								int height2 = image2.getHeight(null);
-								Image resizedImage2 = image2.getScaledInstance(30, 70, Image.SCALE_SMOOTH);
-								imageIcon2 = new ImageIcon(resizedImage2);
-								JLabel imageLabel2 = new JLabel(imageIcon2);
-								imageLabel2.setBounds(875, 625, 30, 50);
-								boardPanel.setLayout(null);
-								boardPanel.add(imageLabel2);
-								boardPanel.repaint();
+								printPlayerLand(825, 625, p.Playernum, tilenum); 
+								printBuildings(875, 625, howmany);
 							}
 							break;
 						}
@@ -1749,35 +626,13 @@ public class Events extends Object{
 					int x = formerimage.getX();
 					int y = formerimage.getY();
 					boardPanel.remove(formerimage);
-					ImageIcon imageIcon = new ImageIcon("player1Land.png");
-					Image image = imageIcon.getImage();
-					int width = image.getWidth(null);
-					int height = image.getHeight(null);
-					Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-					imageIcon = new ImageIcon(resizedImage);
-					JLabel imageLabel = new JLabel(imageIcon);
-					imageLabel.setBounds(x, y, 30, 50);
-					boardPanel.setLayout(null);
-					boardPanel.add(imageLabel);
-					boardPanel.repaint();
-					imageLabels[tilenum] = imageLabel;
+					printPlayerLand(x, y, me.Playernum, tilenum);
 				}
 				else {
 					int x = formerimage.getX();
 					int y = formerimage.getY();
 					boardPanel.remove(formerimage);
-					ImageIcon imageIcon = new ImageIcon("player2Land.png");
-					Image image = imageIcon.getImage();
-					int width = image.getWidth(null);
-					int height = image.getHeight(null);
-					Image resizedImage = image.getScaledInstance(30, 50, Image.SCALE_SMOOTH);
-					imageIcon = new ImageIcon(resizedImage);
-					JLabel imageLabel = new JLabel(imageIcon);
-					imageLabel.setBounds(x, y, 30, 50);
-					boardPanel.setLayout(null);
-					boardPanel.add(imageLabel);
-					boardPanel.repaint();
-					imageLabels[tilenum] = imageLabel;
+					printPlayerLand(x, y, me.Playernum, tilenum);
 				}
 			}
 		}
